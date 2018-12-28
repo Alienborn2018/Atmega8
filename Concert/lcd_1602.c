@@ -34,7 +34,7 @@ void lcd_init(void) {
 	_delay_ms(250);
 	lcd_wellcome();
 	_delay_ms(1500);
-	lcd_cmd(LCD_CLEAR);
+	//lcd_cmd(LCD_CLEAR);
 }
 
 void lcd_cmd(char c) {

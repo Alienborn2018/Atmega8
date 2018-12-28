@@ -23,3 +23,6 @@ void encoder_run(void);
 
 void encoder_timer_0_start(void);
 void encoder_timer_0_stop(void);
+
+void encoder_turn_up(void);
+void encoder_turn_down(void);

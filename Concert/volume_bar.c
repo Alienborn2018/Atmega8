@@ -30,6 +30,7 @@ void vol_bar_run(void) {
 	lcd_gotoxy(0,0);
 	lcd_printf("Volume:");
 
+	/*
 	if (vol_current != vol_old)	{
 		if(vol_current > VOL_MAX)
 			vol_current = VOL_MAX;
@@ -50,5 +51,5 @@ void vol_bar_run(void) {
 
 		bar_update(bar_current);
 		bar_old = bar_current;
-	}
+	}*/
 }

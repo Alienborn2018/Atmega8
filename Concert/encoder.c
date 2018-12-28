@@ -6,6 +6,7 @@
 #include "encoder.h"
 #include "ctrl.h"
 #include "lcd_1602.h"
+#include "volume_bar.h"
 
 //INT0 interrupt
 ISR(INT0_vect ) {

@@ -90,7 +90,6 @@ void ctrl_run(void) {
 	if ( flag1 >= 0 ) {
 		ctrl_green_led_tick();
 		if (flag1 == 1)	{
-			vol_current = timer0_overflow_count - timer0_overflow_count_old;
 		 	lcd_printfxy(0, 13, " ON");
 		}
 		else {

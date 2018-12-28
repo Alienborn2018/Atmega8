@@ -10,22 +10,18 @@
 //INT0 interrupt
 ISR(INT0_vect ) {
 	if(!bit_is_clear(PIND, PD3)) {
-		//right
-	}
-	else {
-		//left
+		encoder_turn_up();
+	} else {
+		encoder_turn_down();
 	}
 }
 
 //INT1 interrupt
 ISR(INT1_vect ) {
-	if(!bit_is_clear(PIND, PD2))
-	{
-		//right
-	}
-	else
-	{
-		//left
+	if(!bit_is_clear(PIND, PD2)) {
+		encoder_turn_up();
+	} else {
+		encoder_turn_down();
 	}
 }
 
@@ -50,6 +46,18 @@ void encoder_init(void) {
 	encoder_timer_0_start();
 }
 
+void encoder_turn_up(void) {
+	if (vol_current < VOL_MAX) {
+		vol_current += 1;
+	}
+}
+
+void encoder_turn_down(void) {
+	if (vol_current > VOL_MIN ) {
+		vol_current -= 1;
+	}
+}
+
 void encoder_timer_0_start(void) {
 	timer0_overflow_count = 0;
 	timer0_overflow_count_old = timer0_overflow_count;
@@ -61,6 +69,7 @@ void encoder_timer_0_stop(void) {
 }
 
 void encoder_run(void) {
+
 
 }
 

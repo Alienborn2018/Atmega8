@@ -12,9 +12,9 @@
  *  ctrl_green_led_toggle	- Toggle state of GREEN LED
  *  ctrl_timer_1_start		- Starts TIMER1 to start counting; Overflow Interrupt will be triggered
  *  ctrl_timer_1_stop		- Stops TIMER1
- *  is_switch_1_changed		- Veifies if SWITHC State changed
+ *  is_switch_1_changed		- Verifies if SWITHC State changed
  *  ctrl_tick				- Triggers GREEN LED Blinking; GREEN LED will blink T_COUNT times and gets Off
- *  ctrl_run				- Loop to test status of SWITCH; Dsiplay status of SWITCH on screen; To be included in Main Loop (run.c)
+ *  ctrl_run				- Loop to test status of SWITCH; Display status of SWITCH on screen; To be included in Main Loop (run.c)
  */
 
 #include <avr/io.h>
@@ -25,6 +25,7 @@
 #include "lcd_1602_custom_char.h"
 #include "encoder.h"
 #include "volume_bar.h"
+#include "serial.h"
 
 // TIMER1 interrupt
 ISR (TIMER1_OVF_vect) {
@@ -43,7 +44,7 @@ void ctrl_init (void) {
 	SET_SWITCH_PIN;
 	TIMSK |= 1U << TOIE1; // Enable timer 1 overflow interrupt
 	TCNT1 = T1_PRESET; // Set timer1 counter initial value to 0
-    switch_1_old = !GET_SWITCH_STATE; // Pre-set current sate of Switch 1
+    switch_1_old = !GET_SWITCH_STATE; // Preset current sate of Switch 1
 }
 
 void ctrl_green_led_off(void) {
@@ -91,11 +92,11 @@ void ctrl_run(void) {
 		ctrl_green_led_tick();
 		if (flag1 == 1)	{
 		 	lcd_printfxy(0, 13, " ON");
-		}
-		else {
+		} else {
 			lcd_printfxy(0, 13, "OFF");
 			timer0_overflow_count = 0;
 			timer0_overflow_count_old = timer0_overflow_count;
 		}
 	}
 }
+

@@ -24,7 +24,7 @@
 void lcd_init(void) {
 	SET_LCD_PORT;
 	SET_LCD_RS_EN;
-	_delay_ms(20); //LCD Power ON delay always >15ms
+	_delay_ms(40); //LCD Power ON delay always >15ms
 
 	lcd_cmd(0x33);
 	lcd_cmd(LCD_4BIT);
@@ -34,7 +34,7 @@ void lcd_init(void) {
 	_delay_ms(250);
 	lcd_wellcome();
 	_delay_ms(1500);
-	//lcd_cmd(LCD_CLEAR);
+	lcd_cmd(LCD_CLEAR);
 }
 
 void lcd_cmd(char c) {
@@ -102,6 +102,5 @@ void lcd_printfxy(char x, char y, char* c) {
 
 void lcd_wellcome(void) {
 	lcd_printfxy(0, 0, "Build:");
-	lcd_printfxy(0, 11, __TIME__);
-	lcd_printfxy(1 ,5, __DATE__);
+	lcd_printfxy(1 ,0, __DATE__);
 }

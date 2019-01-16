@@ -12,7 +12,7 @@
  *  TIMER1 			- Used as counter to blink GREEN LED each times it overflows
  *
  *  Constants:
- *  T1_PRESET 		- TIMER1 pre-set value
+ *  T1_PRESET 		- TIMER1 preset value
  *  T1_COUNT 		- Number of blinks per each event detected
  *
  *  Macros:
@@ -32,7 +32,7 @@
 #define SWITCH_1 PC0
 #define LED_GREEN PC1
 
-#define T1_PRESET 65000
+#define T1_PRESET 62000
 #define T1_COUNT 5
 
 #define SET_GREEN_LED_PIN DDRC |= 1U << LED_GREEN

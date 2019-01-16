@@ -6,17 +6,17 @@
  *  Author: Piotr Ostrowski
  *
  *  Ports:
- *  PD4-7 			- 4bit data bus for LCD
- *  RS PD1 			- Define PD1 as RS
- *  EN PD0 			- Define PD0 as EN
+ *  PD4-7 			- Define PD4-7 as 4-bit data bus for LCD
+ *  RS PC3 			- Define PC3 as RS
+ *  EN PC2 			- Define PC2 as EN
  *
  *  Constants:
- *  LAT_1 50 		- Defines delay in micro-seconds for data validity for data write
- *  LAT_2 200 		- Defines delay in micro-seconds after data write
- *  LAT_3 2 		- Defines delay in mili+seconds for lcd clear command
+ *  LAT_1 50 		- Defines delay in microseconds for data validity for data write
+ *  LAT_2 200 		- Defines delay in microseconds after data write
+ *  LAT_3 2 		- Defines delay in milliseconds for LCD clear command
  *
  *  Macros:
- *  SET_LCD_PORT	- Set LCD Port (PD0-1, PD4-7) as output
+ *  SET_LCD_PORT	- Set LCD Port (PD4-7) as output
  *  LCD_RS_HIGH 	- Set RS High
  *  LCD_RS_LOW		- Set RS Low
  *  LCD_EN_HIGH		- Set EN High
@@ -36,7 +36,7 @@
 #ifndef LCD_1602_H_
 #define LCD_1602_H_
 
-#define LAT_1 50
+#define LAT_1 100
 #define LAT_2 200
 #define LAT_3 2
 

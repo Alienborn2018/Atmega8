@@ -25,18 +25,18 @@
 
 int main (void) {
 	lcd_init();
-	//ctrl_init();
-	//encoder_init();
-	//vol_bar_init();
-	//serial_init();
+	ctrl_init();
+	encoder_init();
+	bar_init();
+	serial_init();
 
-    //sei(); // Enable interrupts
+    sei(); // Enable interrupts
    	while (1) {
-   		//ctrl_run();
-   		//encoder_run();
-   		//vol_bar_run();
-   		//serial_run();
-		//_delay_ms(10);
+   		ctrl_run();
+   		encoder_run();
+   		bar_run();
+   		serial_run();
+		_delay_ms(1);
    	}
    	return (0);
 }
